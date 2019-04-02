@@ -39,9 +39,16 @@
                     </div>
                     <!-- 购物车 -->
                     <div class="ShoppingCart">
-                        
+                        <img src="../../assets/images/shoppingCart.png">
+                        <span>购物车</span>
+                        <div class="infoNumber">1</div>
                     </div>
                     <!-- 购物车 end-->
+                    <!-- 二维码 -->
+                    <div class="code">
+                        <img src="../../assets/images/code.png">
+                    </div>
+                    <!-- 二维码 end-->
                 </div>
             </div>
             <!-- 内容 end-->
@@ -165,6 +172,39 @@ a{
     border-radius: 21px;
     margin-top: 38px;
     margin-left: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.ShoppingCart img{
+    margin-left: 16px;
+}
+.ShoppingCart span{
+    margin-left: 18px;
+    color: #ff3f40;
+    font-size: 14px;
+}
+.infoNumber{
+    width: 15px;
+    height: 15px;
+    background-color: #ff3f40;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -7px;
+    right: 4px;
+}
+.code{
+    width: 189px;
+    height: 153px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 .search-input input::-webkit-input-placeholder{
     color:#666666;
