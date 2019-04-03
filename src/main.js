@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import './assets/css/base.css';
 import headerTop from "./components/header/header"
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 Vue.config.productionTip = false
 Vue.component("head-view",headerTop);

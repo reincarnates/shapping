@@ -107,3 +107,7 @@
 .clearfix{
   display: inline-block;
 }
+/* pointer */
+.pointer{
+  cursor: pointer;
+}
