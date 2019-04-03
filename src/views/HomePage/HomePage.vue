@@ -64,11 +64,32 @@
         </div>
         <!-- 全部分类 -->
         <div class="categoriesWarp">
-          <div class="all-categories">
+          <div class="all-categories pointer" @click="operationWheel">
             <img src="@/assets/images/shrink.png">
             <span class="mar-lw">全部分类</span>
           </div>
-          <div class="categories-right"></div>
+          <div class="categories-right smallNav">
+            <ul class="clearfix">
+                <li>
+                  <a href="#">厨房用纸</a>
+                </li>
+                <li>
+                  <a href="#">清洁纸巾</a>
+                </li>
+                <li>
+                  <a href="#">米面粮油</a>
+                </li>
+                <li>
+                  <a href="#">家居用品</a>
+                </li>
+                <li>
+                  <a href="#">厨房用品</a>
+                </li>
+                <li>
+                  <a href="#">母婴</a>
+                </li>
+              </ul>
+          </div>
         </div>
         <!-- 全部分类 end-->
         <!-- 侧导航&轮播 -->
@@ -79,7 +100,7 @@
                 <img src="@/assets/images/dowm.png" v-if="brandFold">
               </div>
             </div>
-          <div class="aside" ref="aside1">
+          <div class="aside" ref="aside1" v-if="isAside">
             <ul class="clearfix" ref="aside">
               <!-- <li v-for="(item, index) in arr" :key="index" :class="{itemHover:itemHoverIndex==index}" @mousemove="mouseEnter(index)" @mouseout="mouseLeave"> -->
               <!-- <div v-html="item"></div> -->
@@ -185,7 +206,7 @@
             </ul>
           </div>
           <!-- 轮播图 -->
-          <div class="aside-right">
+          <div class="aside-right" v-if="isAside">
             <div class="aside-planting">
               <div class="planting mar-lm mar-bm">
                 <wheel-planting></wheel-planting>
@@ -280,6 +301,13 @@
         </div>
         <!-- 列表选择 end-->
         <!-- 侧导航&轮播 end-->
+        <!-- 全屏轮播 -->
+        <div class="rotation" v-if="isRotation">
+          <div class="screen-rotation">
+            <screen-sotation></screen-sotation>
+          </div>
+        </div>
+        <!-- 全屏轮播 end-->
         <!-- 秒杀 -->
         <div class="content-spike"></div>
         <!-- 秒杀end -->
@@ -291,9 +319,11 @@
 
 <script>
 import WheelPlanting from "./WheelPlanting.vue";
+import ScreenSotation from "./ScreenSotation.vue";
 export default {
   components: {
-    WheelPlanting
+    WheelPlanting,
+    ScreenSotation
   },
   data() {
     return {
@@ -324,6 +354,8 @@ export default {
       brandFold: true, //下拉图标显示隐藏
       isOpen: true, //是否加载更多列表
       //categories: true  , //全部分类
+      isRotation: false, //隐藏全屏轮播
+      isAside: true, //左侧导航和轮播显示隐藏
     };
   },
   created() {},
@@ -332,7 +364,7 @@ export default {
     var heightCss2 = window.getComputedStyle(this.$refs.aside1).height;
     if (heightCss > heightCss2) {
       this.$refs.aside1.style.overflow = "hidden";
-    }else{
+    } else {
       this.isOpen = false;
     }
     // this.$refs.aside1.style.height = heightCss
@@ -358,22 +390,27 @@ export default {
     openAside() {
       this.brandFold = !this.brandFold;
       var heightCss = window.getComputedStyle(this.$refs.aside).height;
-      if(!this.brandFold) {
+      if (!this.brandFold) {
         this.$refs.aside1.style.height = heightCss;
         this.isOpen = false;
-      }else{
-        this.$refs.aside1.style.height = 480 + 'px';
+      } else {
+        this.$refs.aside1.style.height = 480 + "px";
       }
+    },
+    //切换轮播图
+    operationWheel() {
+      this.isRotation = !this.isRotation;
+      this.isAside = !this.isAside;
     }
   }
 };
 </script>
 
 <style scoped>
-.openfather{
+.openfather {
   position: relative;
 }
-.openDown{
+.openDown {
   width: 204px;
   height: 30px;
   position: absolute;
@@ -384,7 +421,7 @@ export default {
   background-color: #ffffff;
   line-height: 30px;
 }
-.openDown img{
+.openDown img {
   width: 15px;
 }
 a {
@@ -429,14 +466,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
+  flex-direction: column;
 }
-.categoriesWarp{
+.categoriesWarp {
   width: 1202px;
   margin: 0 auto;
   display: flex;
 }
-.all-categories{
+.all-categories {
   width: 204px;
   height: 42px;
   background-color: #ff4040;
@@ -446,10 +483,9 @@ a {
   align-items: center;
   justify-content: center;
 }
-.categories-right{
+.categories-right {
   width: 998px;
   height: 42px;
-  background-color: #000000
 }
 .content-input {
   width: 653px;
@@ -681,6 +717,15 @@ a {
   width: 193px;
   height: 423px;
   background: #ff3f40;
+}
+.rotation{
+  position: relative;
+}
+.screen-rotation{
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  bottom: 0
 }
 /* .itemHover {
   background-color: #d8d8d8 !important;
