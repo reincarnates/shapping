@@ -15,6 +15,9 @@ export default {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  list-style: none;
+  font-family: "微软雅黑";
+  box-sizing: border-box;
 }
 html,body,#app{
   width: 100%;
