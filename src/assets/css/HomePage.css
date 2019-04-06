@@ -637,6 +637,9 @@
   .mother-commodity-item:last-child{
     border: none;
   }
+  .mother-commodity-item a img:hover{
+    opacity: 0.7
+  }
   .commodity-introduce{
     line-height: 22ox;
     font-size: 12px;

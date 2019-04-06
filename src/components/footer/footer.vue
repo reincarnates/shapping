@@ -88,81 +88,60 @@
                         </div>
                         <div class="footer-list">
                             <div>
-                                <a href="#" class="color">售后服务</a>
+                                <a href="#" class="color">配送服务</a>
                             </div>
                             <ul class="clearfix">
                                 <li>
-                                    <a href="#">联系卖家</a>
+                                    <a href="#">配送进度查询</a>
                                 </li>
+                                <li>
+                                    <a href="#">商品验货与验收</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-list">
+                            <div>
+                                <a href="#" class="color">售后保障</a>
+                            </div>
+                            <ul class="clearfix">
                                 <li>
                                     <a href="#">退换货政策</a>
                                 </li>
                                 <li>
-                                    <a href="#">退换货流程</a>
+                                    <a href="#">发票制度</a>
                                 </li>
                                 <li>
-                                    <a href="#">返修/退换货</a>
-                                </li>
-                                <li>
-                                    <a href="#">退款申请</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-list">
-                            <div>
-                                <a href="#" class="color">购物指南</a>
-                            </div>
-                            <ul class="clearfix">
-                                <li>
-                                    <a href="#">会员修改密码</a>
-                                </li>
-                                <li>
-                                    <a href="#">会员修改个人资料</a>
-                                </li>
-                                <li>
-                                    <a href="#">商品发布</a>
-                                </li>
-                                <li>
-                                    <a href="#">修改收货地址</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-list">
-                            <div>
-                                <a href="#" class="color">关于我们</a>
-                            </div>
-                            <ul class="clearfix">
-                                <li>
-                                    <a href="#">合作及洽谈</a>
-                                </li>
-                                <li>
-                                    <a href="#">招聘英才</a>
-                                </li>
-                                <li>
-                                    <a href="#">关于我们</a>
-                                </li>
-                                <li>
-                                    <a href="#">联系我们</a>
+                                    <a href="#">帮助中心</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="footer-center-right">
                         <div class="tow-code">
-                            <div class="public-address"></div>
                             <div class="public-address-word">
-                                公众号
+                                APP更优惠
+                            </div>
+                            <div class="public-address">
+                                <img src="@/assets/images/appcode.jpg">
                             </div>
                         </div>
                         <div class="tow-code">
-                            <div class="public-address"></div>
                             <div class="public-address-word">
-                                官方微信
+                                加微信查订单
+                            </div>
+                            <div class="public-address">
+                                <img src="@/assets/images/contactcode.jpg">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="footer-payment-info">
+                <div class="footer-bottom">
+                    沪ICP备16050468 | 经营执照 | 互联网药品信息服务 资格证(沪)-经营性-2017-0006 | 违法和不良信息举报电话: 0521-88100253 | 沪B2 217009 | 沪公网安备310502002909号 | 友情链接 | 出版物经营许可证 | 增值电信业务经营许可证
+                </div>
+                <div class="footer-bottom">
+                    Copyright&copy; 1号店网上超市2007-2019, All Rights Reserved
+                </div>
+                <div class="footer-payment-info mar-tw">
                     <div class="footer-payment-info-item">
                         <div>
                             <img src="@/assets/images/policebadge.png" alt="">
@@ -171,12 +150,54 @@
                             工业和信息化部
                         </div>
                     </div>
-                    <div class="footer-payment-info-item"></div>
-                    <div class="footer-payment-info-item"></div>
-                    <div class="footer-payment-info-item"></div>
-                    <div class="footer-payment-info-item"></div>
-                    <div class="footer-payment-info-item"></div>
-                    <div class="footer-payment-info-item"></div>
+                    <div class="footer-payment-info-item">
+                        <div>
+                            <img src="@/assets/images/policebadge.png" alt="">
+                        </div>
+                        <div class="footer-payment-info-word">
+                            工业和信息化部
+                        </div>
+                    </div>
+                    <div class="footer-payment-info-item">
+                        <div>
+                            <img src="@/assets/images/policebadge.png" alt="">
+                        </div>
+                        <div class="footer-payment-info-word">
+                            工业和信息化部
+                        </div>
+                    </div>
+                    <div class="footer-payment-info-item">
+                        <div>
+                            <img src="@/assets/images/policebadge.png" alt="">
+                        </div>
+                        <div class="footer-payment-info-word">
+                            工业和信息化部
+                        </div>
+                    </div>
+                    <div class="footer-payment-info-item">
+                        <div>
+                            <img src="@/assets/images/policebadge.png" alt="">
+                        </div>
+                        <div class="footer-payment-info-word">
+                            工业和信息化部
+                        </div>
+                    </div>
+                    <div class="footer-payment-info-item">
+                        <div>
+                            <img src="@/assets/images/policebadge.png" alt="">
+                        </div>
+                        <div class="footer-payment-info-word">
+                            工业和信息化部
+                        </div>
+                    </div>
+                    <div class="footer-payment-info-item">
+                        <div>
+                            <img src="@/assets/images/policebadge.png" alt="">
+                        </div>
+                        <div class="footer-payment-info-word">
+                            工业和信息化部
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,7 +266,6 @@ export default {
     height: 236px;
     padding-left: 8px;
     padding-right: 8px;
-    border-bottom: 1px solid #ededed;
     box-sizing: border-box;
     display: flex;
 }
@@ -258,7 +278,7 @@ export default {
     display: flex;
 }
 .footer-list{
-    width: 20%;
+    width: 25%;
     line-height: 31px;
 }
 .footer-list ul li a{
@@ -277,8 +297,7 @@ export default {
 }
 .tow-code{
     width: 134px;
-    height: 158px;
-    border: 1px solid #ededed;
+    height: 170px;
     margin-right: 50px;
 }
 .tow-code:last-child{
@@ -287,16 +306,13 @@ export default {
 .public-address{
     width: 134px;
     height: 132px;
-    border-bottom: 1px solid #ededed;
-    padding: 15px;
 }
 .public-address-word{
     width: 134px;
-    height: 26px;
+    height: 36px;
     line-height: 26px;
     color: #9c9e9c;
-    font-size: 12px;
-    text-align: center;
+    font-size: 16px;
 }
 .footer-payment-info{
     width: 100%;
@@ -323,6 +339,14 @@ export default {
     color: #666666;
     font-size: 12px;
     margin-left: 16px;
+}
+.footer-bottom{
+    width: 120%;
+    line-height: 27px;
+    color: #333333;
+    text-align: center;
+    font-size: 12px;
+    margin-left: -10%;
 }
 </style>
 
