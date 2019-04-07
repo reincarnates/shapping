@@ -22,7 +22,7 @@
           <div class="content-input">
             <!-- 搜索框 -->
             <div class="search-input">
-              <input type="text" placeholder="国际大牌母婴用品">
+              <input type="text" :placeholder="mother" @focus="motherFocus" @blur="motherBlur">
               <img src="@/assets/images/search.png">
             </div>
             <div class="smallNav">
@@ -1530,6 +1530,7 @@ export default {
       //categories: true  , //全部分类
       isRotation: false, //隐藏全屏轮播
       isAside: true, //左侧导航和轮播显示隐藏
+      mother: '国际大牌母婴用品'
     };
   },
   created() {},
@@ -1575,6 +1576,12 @@ export default {
     operationWheel() {
       this.isRotation = !this.isRotation;
       this.isAside = !this.isAside;
+    },
+    motherFocus() {
+      this.mother = '';
+    },
+    motherBlur() {
+      this.mother = '国际大牌母婴用品';
     }
   }
 };
