@@ -708,8 +708,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -726,8 +726,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -744,8 +744,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -762,8 +762,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -782,8 +782,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -800,8 +800,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -818,8 +818,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>
@@ -836,8 +836,8 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
+                <div class="price-cart2">￥288</div>
                 <div class="price-cart mar-tn">
-                  <div>￥288</div>
                   <div class="mar-rw pointer">
                     <img src="@/assets/images/cart.png">
                   </div>

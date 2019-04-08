@@ -1096,8 +1096,14 @@
     color: #f20b0b;
     font-size: 16px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     box-sizing: border-box;
+  }
+  .price-cart2{
+    line-height: 28px;
+    box-sizing: border-box;
+    color: #f20b0b;
+    font-size: 16px;
   }
   .Featured{
     width: 1202px;
