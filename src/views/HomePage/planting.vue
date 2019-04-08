@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div @mouseenter="on_top_enter" @mouseleave="on_top_leave" style="width:789px;height:600px;">
-      <swiper :options="swiperOption" ref="mySwiper" style="height:600px;">
+    <div @mouseenter="on_top_enter" @mouseleave="on_top_leave" style="width:789px;height:398px;">
+      <swiper :options="swiperOption" ref="mySwiper" style="height:398px;">
         <!-- slides -->
         <swiper-slide>
-          <img src="@/assets/images/bannerimg.png">
+          <img src="@/assets/images/plantingone.png">
         </swiper-slide>
         <swiper-slide>
-          <img src="@/assets/images/bannerimg.png">
+          <img src="@/assets/images/plantingtwo.png">
         </swiper-slide>
         <swiper-slide>
-          <img src="@/assets/images/bannerimg.png">
+          <img src="@/assets/images/plantingthree.png">
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>

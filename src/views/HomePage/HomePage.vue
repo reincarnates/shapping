@@ -15,6 +15,55 @@
       <!-- 头部end -->
       <!-- 内容 -->
       <div class="content">
+        <!-- 侧边栏 -->
+        <div class="application">
+          <div class="application-info" v-if="isApplication" @mousemove="application" @mouseout="applicationOut">
+            我的消息
+            <div class="triangle_border_right">
+                <span></span>
+            </div>
+          </div>
+          <div class="application-item pointer" @mousemove="application" @mouseout="applicationOut">
+            <img src="@/assets/images/sideMsg.png">
+          </div>
+          <div class="application-info2" v-if="isApplication2" @mousemove="application2" @mouseout="applicationOut2">
+            购物车
+            <div class="triangle_border_right">
+              <span></span>
+            </div>
+          </div>
+          <div class="application-item pointer" @mousemove="application2" @mouseout="applicationOut2">
+            <img src="@/assets/images/sideCar.png">
+          </div>
+          <div class="application-info3" v-if="isApplication3" @mousemove="application3" @mouseout="applicationOut3">
+            浏览足迹
+            <div class="triangle_border_right">
+              <span></span>
+            </div>
+          </div>
+          <div class="application-item pointer" @mousemove="application3" @mouseout="applicationOut3">
+            <img src="@/assets/images/sideFoot.png">
+          </div>
+          <div class="application-info4" v-if="isApplication4" @mousemove="application4" @mouseout="applicationOut4">
+            联系客服
+            <div class="triangle_border_right">
+              <span></span>
+            </div>
+          </div>
+          <div class="application-item pointer" @mousemove="application4" @mouseout="applicationOut4">
+            <img src="@/assets/images/sideCustomer.png">
+          </div>
+          <div class="application-info5" v-if="isApplication5" @mousemove="application5" @mouseout="applicationOut5">
+            问题反馈
+            <div class="triangle_border_right">
+              <span></span>
+            </div>
+          </div>
+          <div class="application-item pointer" @mousemove="application5" @mouseout="applicationOut5">
+            <img src="@/assets/images/sideBack.png">
+          </div>
+        </div>
+        <!-- 侧边栏end -->
         <div class="content-search clearfix">
           <div class="content-logo">
             <img src="@/assets/images/uligou.png">
@@ -50,10 +99,13 @@
             <!-- 搜索框 end-->
           </div>
           <!-- 购物车 -->
-          <div class="ShoppingCart">
+          <div class="ShoppingCart" @mousemove="shoppingMove" @mouseout="shoppingOut">
             <img src="@/assets/images/shoppingCart.png">
             <span>购物车</span>
             <div class="infoNumber">1</div>
+          </div>
+          <div class="ShoppingCart-position" v-if="isShopping">
+            购物车中没有商品，赶快去选购！
           </div>
           <!-- 购物车 end-->
           <!-- 二维码 -->
@@ -64,11 +116,11 @@
         </div>
         <!-- 全部分类 -->
         <div class="categoriesWarp">
-          <div class="all-categories pointer" @click="operationWheel">
-            <img src="@/assets/images/shrink.png">
-            <span class="mar-lw">全部分类</span>
+          <div class="all-categories pointer" @click="openAside" ref="allCategories">
+            <img src="@/assets/images/shrink.png" v-if="isOpen">
+            <span class="mar-lw" v-if="isOpen">全部分类</span>
           </div>
-          <div class="categories-right">
+          <div class="categories-right" v-if="isCategories">
             <ul class="clearfix">
                 <li>
                   <a href="#">厨房用纸</a>
@@ -206,28 +258,159 @@
             </ul>
           </div>
           <!-- 轮播图 -->
-          <div class="aside-right" v-if="isAside">
+          <div class="aside-right" v-if="isAside == 2">
             <div class="aside-planting">
-              <div class="planting mar-lm mar-bm">
+              <div class="planting mar-lm">
                 <wheel-planting></wheel-planting>
               </div>
               <div class="planting-right">
-                <div class="planting-img-top mar-bm">
+                <div class="person-info">
+                  <div class="head-portrait">
+                    <div class="portrait">
+                      <div class="portrait-back">
+                        <img src="@/assets/images/headportrait.png">
+                      </div>
+                      <div class="portrait-user">
+                        用户名：zkdf
+                      </div>
+                    </div>
+                    <div class="user-info">
+                      <div class="balance">
+                        <img src="@/assets/images/pointed.png">
+                        <span>账户余额：1000</span>
+                      </div>
+                      <div class="grade">
+                        <img src="@/assets/images/pointed.png" class="mar-lm">
+                        <span>等级：V1</span>
+                      </div>
+                    </div>
+                    <div class="user-info2">
+                      <div class="company">
+                        <img src="@/assets/images/pointed.png">
+                        <span>单位：中石油</span>
+                      </div>
+                      <div class="integral">
+                        <img src="@/assets/images/pointed.png" class="mar-lm">
+                        <span>积分：5</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-status">
+                    <div class="order-status-header">
+                      订单状态
+                    </div>
+                    <div class="order-status-bottom">
+                      <div class="order-status-item pointer">
+                        <img src="@/assets/images/payment.png">
+                        <span>待付款</span>
+                      </div>
+                      <div class="order-status-item pointer">
+                        <img src="@/assets/images/received.png">
+                        <span>待收货</span>
+                      </div>
+                      <div class="order-status-item pointer">
+                        <img src="@/assets/images/evaluated.png">
+                        <span>待评价</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="personal-shortcut">
+                    <div class="order-status-header">
+                      个人快捷
+                    </div>
+                    <div class="order-status-bottom">
+                      <div class="personal-shortcut-item pointer">
+                        <img src="@/assets/images/Favorites.png">
+                        <span>收藏夹</span>
+                      </div>
+                      <div class="personal-shortcut-item pointer">
+                        <img src="@/assets/images/footprints.png">
+                        <span>浏览足迹</span>
+                      </div>
+                      <div class="personal-shortcut-item pointer">
+                        <img src="@/assets/images/account.png">
+                        <span>账户充值</span>
+                      </div>
+                    </div>
+                    <div class="order-status-bottom">
+                      <div class="personal-shortcut-item pointer">
+                        <img src="@/assets/images/service.png">
+                        <span>专属客服</span>
+                      </div>
+                      <div class="personal-shortcut-item pointer">
+                        <img src="@/assets/images/message.png">
+                        <span>消息中心</span>
+                      </div>
+                      <div class="personal-shortcut-item pointer">
+                        <img src="@/assets/images/expect.png">
+                        <span>期待更多</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="welfare-consultation">
+                    <div class="welfare-consultation-header">
+                      <span>福利咨询</span>
+                      <a href="#">查看更多></a>
+                    </div>
+                    <div class="welfare-consultation-item mar-bw">
+                      <div class="welfare-consultation-item-left">
+                        HOT
+                      </div>
+                      <div class="welfare-consultation-item-right">
+                        好货优选
+                      </div>
+                    </div>
+                    <div class="welfare-consultation-item mar-bw">
+                      <div class="welfare-consultation-item-back">
+                        福利
+                      </div>
+                      <div class="welfare-consultation-item-right">
+                        好货优选
+                      </div>
+                    </div>
+                    <div class="welfare-consultation-item mar-bw">
+                      <div class="welfare-consultation-item-backs">
+                        咨询
+                      </div>
+                      <div class="welfare-consultation-item-right">
+                        好货优选
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 轮播图 end-->
+          
+          <!-- 轮播图 -->
+          <div class="aside-right" v-if="isAside == 1">
+            <div class="aside-planting2">
+              <div class="planting2 mar-lm">
+                <planting></planting>
+              </div>
+              <div class="planting-right2">
+                <div class="planting-img-top mar-bm pointer">
+                  <div class="Mask"></div>
                   <img src="@/assets/images/irobot.png">
                 </div>
-                <div class="planting-img-bottom mar-bm">
+                <div class="planting-img-bottom mar-bm pointer">
+                  <div class="Mask"></div>
                   <img src="@/assets/images/pirbot.png">
                 </div>
               </div>
             </div>
             <div class="planting-bottom">
-              <div class="planting-bottom-left mar-lm">
+              <div class="planting-bottom-left mar-lm pointer">
+                <div class="planting-mask"></div>
                 <img src="@/assets/images/smallimg.png">
               </div>
-              <div class="planting-bottom-left mar-lm">
+              <div class="planting-bottom-left mar-lm pointer">
+                <div class="planting-mask"></div>
                 <img src="@/assets/images/smallimg.png">
               </div>
-              <div class="planting-img-bottom mar-lm">
+              <div class="planting-img-bottom mar-lm pointer">
+                <div class="Mask"></div>
                 <img src="@/assets/images/pirbot.png">
               </div>
             </div>
@@ -302,7 +485,7 @@
         <!-- 列表选择 end-->
         <!-- 侧导航&轮播 end-->
         <!-- 全屏轮播 -->
-        <div class="rotation" v-if="isRotation">
+        <div class="rotation" v-if="isAside == 3">
           <div class="screen-rotation">
             <screen-sotation></screen-sotation>
           </div>
@@ -384,10 +567,10 @@
               <img src="@/assets/images/rightarrow.png" class="pointer">
               <span>专属你的购物指南</span>
             </div>
-            <div class="sub-product">
+            <div class="sub-product pointer">
               <img src="@/assets/images/bestimg.png">
             </div>
-            <div class="mar-tw">
+            <div class="sub-product-bottom mar-tw pointer">
               <img src="@/assets/images/sellers.png">
               <img src="@/assets/images/sellers.png">
             </div>
@@ -399,12 +582,20 @@
               <span>专属你的购物指南</span>
             </div>
             <div class="clothes">
-              <img src="@/assets/images/clothes.png">
+              <a href="#">
+                <img src="@/assets/images/clothes.png">
+              </a>
             </div>
             <div class="clothesmall">
-              <img src="@/assets/images/clothesmall.png">
-              <img src="@/assets/images/clothesmall.png">
-              <img src="@/assets/images/clothesmall.png">
+              <a href="#">
+                <img src="@/assets/images/clothesmall.png">
+              </a>
+              <a href="#">
+                <img src="@/assets/images/clothesmall.png">
+              </a>
+              <a href="#">
+                <img src="@/assets/images/clothesmall.png">
+              </a>
             </div>
           </div>
           <div class="single-product-right">
@@ -503,117 +694,149 @@
           </div>
           <div class="child-care-right">
             <div class="mother-commodity">
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter" @mouseout="maskLeave">
+                <div class="commodityImg">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter2" @mouseout="maskLeave2">
+                <div class="commodityImg2">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos2">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter3" @mouseout="maskLeave3">
+                <div class="commodityImg3">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos3">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter4" @mouseout="maskLeave4">
+                <div class="commodityImg4">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos4">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="mother-commodity2">
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter5" @mouseout="maskLeave5">
+                <div class="commodityImg5">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos5">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter6" @mouseout="maskLeave6">
+                <div class="commodityImg6">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos6">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter7" @mouseout="maskLeave7">
+                <div class="commodityImg7">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos7">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="mother-commodity-item">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+              <div class="mother-commodity-item" @mousemove="maskEnter8" @mouseout="maskLeave8">
+                <div class="commodityImg8">
+                  <a href="#">
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div class="price-cart mar-tn">
-                  <div>￥288</div>
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div class="commodity-info commodityInfos8">
+                  <div class="commodity-introduce">
+                    a2 白金婴儿配方奶粉一段 白金配方，营养保证
+                  </div>
+                  <div class="price-cart mar-tn">
+                    <div>￥288</div>
+                    <div class="mar-rw pointer">
+                      <img src="@/assets/images/cart.png">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1443,7 +1666,7 @@
               <span class="mar-lw">品牌特卖</span>
               <span class="pick-sale">品牌限时特卖</span>
             </div>
-            <div>
+            <div class="single-product-img">
               <img src="@/assets/images/shoes.png">
             </div>
           </div>
@@ -1452,7 +1675,7 @@
               <span class="mar-lw">企业采购</span>
               <span class="pick-sale">超低价抢购中</span>
             </div>
-            <div>
+            <div class="single-product-img">
               <img src="@/assets/images/shoes.png">
             </div>
           </div>
@@ -1461,7 +1684,7 @@
               <span class="mar-lw">汽车用品</span>
               <span class="pick-sale">爆款直降天天低价</span>
             </div>
-            <div>
+            <div class="single-product-img">
               <img src="@/assets/images/shoes.png">
             </div>
           </div>
@@ -1491,11 +1714,14 @@
 
 <script>
 import WheelPlanting from "./WheelPlanting.vue";
+import planting from "./planting.vue";
 import ScreenSotation from "./ScreenSotation.vue";
 import footerView from "../../components/footer/footer.vue";
+import global from "../../assets/js/config.js";
 export default {
   components: {
     WheelPlanting,
+    planting,
     ScreenSotation,
     footerView
   },
@@ -1529,8 +1755,23 @@ export default {
       isOpen: true, //是否加载更多列表
       //categories: true  , //全部分类
       isRotation: false, //隐藏全屏轮播
-      isAside: true, //左侧导航和轮播显示隐藏
-      mother: '国际大牌母婴用品'
+      isAside: 1, //左侧导航和轮播显示隐藏
+      isCategories: global.topMenu,//顶部导航显示隐藏
+      isShopping: false, //购物车提示
+      mother: '国际大牌母婴用品',
+      isApplication: false,
+      isApplication2: false,
+      isApplication3: false,
+      isApplication4: false,
+      isApplication5: false,
+      mask: false,
+      mask2: false,
+      mask3: false,
+      mask4: false,
+      mask5: false,
+      mask6: false,
+      mask7: false,
+      mask8: false,
     };
   },
   created() {},
@@ -1542,10 +1783,13 @@ export default {
     } else {
       this.isOpen = false;
     }
-    // this.$refs.aside1.style.height = heightCss
-    // var heightCss2 = window.getComputedStyle(this.$refs.aside1).height;
-    // heightCss2 = heightCss;
-    console.log(heightCss);
+    if(global.Bg == 1) {
+      this.isAside = 1;
+    }else if(global.Bg == 2) {
+      this.isAside = 2
+    }else if(global.Bg == 3) {
+      this.isAside = 3
+    }
   },
   methods: {
     //关闭广告
@@ -1568,6 +1812,7 @@ export default {
       if (!this.brandFold) {
         this.$refs.aside1.style.height = heightCss;
         this.isOpen = false;
+        this.$refs.allCategories.style.background = 'white'
       } else {
         this.$refs.aside1.style.height = 480 + "px";
       }
@@ -1577,12 +1822,116 @@ export default {
       this.isRotation = !this.isRotation;
       this.isAside = !this.isAside;
     },
+    //搜索框的placeholder
     motherFocus() {
       this.mother = '';
     },
     motherBlur() {
       this.mother = '国际大牌母婴用品';
-    }
+    },
+    //购物车提示
+    shoppingMove() {
+      this.isShopping = true;
+    },
+    shoppingOut() {
+      this.isShopping = false;
+    },
+    //侧边栏
+    application() {
+      this.isApplication = true;
+    },
+    applicationOut() {
+      this.isApplication = false;
+    },
+    application2() {
+      this.isApplication2 = true;
+    },
+    applicationOut2() {
+      this.isApplication2 = false;
+    },
+    application3() {
+      this.isApplication3 = true;
+    },
+    applicationOut3() {
+      this.isApplication3 = false;
+    },
+    application4() {
+      this.isApplication4 = true;
+    },
+    applicationOut4() {
+      this.isApplication4 = false;
+    },
+    application5() {
+      this.isApplication5 = true;
+    },
+    applicationOut5() {
+      this.isApplication5 = false;
+    },
+    //商品展示详情
+    maskEnter() {
+      document.querySelector('.commodityInfos').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg').style.opacity = 0.7;
+    },
+    maskLeave() {
+      document.querySelector('.commodityInfos').style.bottom = -39 + 'px'
+      document.querySelector('.commodityImg').style.opacity = 1;
+    },
+    maskEnter2() {
+      document.querySelector('.commodityInfos2').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg2').style.opacity = 0.7;
+    },
+    maskLeave2() {
+      document.querySelector('.commodityInfos2').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg2').style.opacity = 1;
+    },
+    maskEnter3() {
+      document.querySelector('.commodityInfos3').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg3').style.opacity = 0.7;
+    },
+    maskLeave3() {
+      document.querySelector('.commodityInfos3').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg3').style.opacity = 1;
+    },
+    maskEnter4() {
+      document.querySelector('.commodityInfos4').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg4').style.opacity = 0.7;
+    },
+    maskLeave4() {
+      document.querySelector('.commodityInfos4').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg4').style.opacity = 1;
+    },
+    maskEnter5() {
+      document.querySelector('.commodityInfos5').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg5').style.opacity = 0.7;
+    },
+    maskLeave5() {
+      document.querySelector('.commodityInfos5').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg5').style.opacity = 1;
+    },
+    maskEnter6() {
+      document.querySelector('.commodityInfos6').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg6').style.opacity = 0.7;
+    },
+    maskLeave6() {
+      document.querySelector('.commodityInfos6').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg6').style.opacity = 1;
+    },
+    maskEnter7() {
+      document.querySelector('.commodityInfos7').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg7').style.opacity = 0.7;
+    },
+    maskLeave7() {
+      document.querySelector('.commodityInfos7').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg7').style.opacity = 1;
+    },
+    maskEnter8() {
+      document.querySelector('.commodityInfos8').style.bottom = 0 + 'px';
+      document.querySelector('.commodityImg8').style.opacity = 0.7;
+    },
+    maskLeave8() {
+      document.querySelector('.commodityInfos8').style.bottom = -39 + 'px';
+      document.querySelector('.commodityImg8').style.opacity = 1;
+    },
   }
 };
 </script>
