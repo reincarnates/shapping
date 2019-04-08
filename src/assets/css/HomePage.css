@@ -52,6 +52,7 @@
     height: 178px;
     right: 0;
     top: 271px;
+    z-index: 998;
   }
   .application-item{
     width: 34px;
@@ -62,6 +63,18 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 2px;
+  }
+  .application-item2{
+    width: 34px;
+    height: 34px;
+    border-radius: 3px;
+    background-color: #7a6e6e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    position: fixed;
+    bottom: 10%;
   }
   .application-info{
     width: 83px;
@@ -148,7 +161,28 @@
     top: -34px;
     left: 73px;
   }
-
+  .siedCart{
+    width: 234px;
+    height: 100%;
+    background-color: #F5F5F5;
+    border-left: solid 1px #7C8994;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: -4px 0 2px rgba(0,0,0,.25);
+    z-index: 997;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  .siedCart-header{
+    width: 100%;
+    font-size: 16px;
+    color: #333333;
+    line-height: 50px;
+    padding-left: 15px;
+    border-bottom: 1px dotted #cccccc;
+  }
   .content-search {
     width: 1202px;
     margin: 0 auto;
