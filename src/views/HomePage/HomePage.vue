@@ -616,7 +616,7 @@
       </div>
       <!-- 单品热卖 end-->
       <!-- 母婴个护 -->
-      <div class="mother-care">
+      <div class="mother-care" v-if="isFloor == 1">
         <div class="personal-care">
           母婴个护
         </div>
@@ -632,7 +632,7 @@
           </ul>
         </div>
       </div>
-      <div class="child-care">
+      <div class="child-care" v-if="isFloor == 1">
         <div class="child-care-left">
           <div class="feeding">
             <a href="#">
@@ -708,10 +708,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -726,10 +733,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -744,10 +758,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -762,10 +783,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -782,10 +810,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -800,10 +835,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -818,10 +860,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -836,10 +885,17 @@
                 <div class="commodity-introduce">
                   a2 白金婴儿配方奶粉一段 白金配方，营养保证
                 </div>
-                <div class="price-cart2">￥288</div>
-                <div class="price-cart mar-tn">
-                  <div class="mar-rw pointer">
-                    <img src="@/assets/images/cart.png">
+                <div style="line-height: 25px;">
+                  <span class="price">市场价:￥97.00</span>
+                </div>
+                <div class="price-cart">
+                  <div class="price-cart2">￥288</div>
+                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
+                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
+                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
+                      <img src="@/assets/images/cart.png" class="mar-rn">
+                      立即购买
+                    </div>
                   </div>
                 </div>
               </div>
@@ -848,8 +904,234 @@
         </div>
       </div>
       <!-- 母婴个护 end-->
-      <!-- 数码家电 -->
+      <!-- 美妆达人 -->
       <div class="mother-care">
+        <div class="personal-care">
+          美妆达人
+        </div>
+        <div class="search-words">
+          <ul class="clearfix">
+            <li>热搜词：</li>
+            <li><a href="#">电动牙刷</a></li>
+            <li><a href="#">耳机</a></li>
+            <li><a href="#">钢笔</a></li>
+            <li><a href="#">手机</a></li>
+            <li><a href="#">吹风机</a></li>
+            <li><a href="#">剃须刀</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="makeup">
+        <div class="makeup-left">
+          <img src="@/assets/images/markeleft.png">
+        </div>
+        <div class="makeup-right">
+          <div class="makeup-right-item color-one">
+            <div class="make-word">
+              <div class="make-word-one">
+                香水专区
+              </div>
+              <div class="make-word-two">
+                做精致的自己
+              </div>
+            </div>
+            <div class="make-img">
+              <img src="@/assets/images/perfume.png">
+            </div>
+          </div>
+          <div class="makeup-right-item color-two">
+            <div class="make-word">
+              <div class="make-word-one make-word-one-color">
+                洗护专区
+              </div>
+              <div class="make-word-two">
+                爱生活 更要爱自己
+              </div>
+            </div>
+            <div class="make-img2">
+              <img src="@/assets/images/care.png">
+            </div>
+          </div>
+          <div class="makeup-right-item color-three">
+            <div class="make-word">
+              <div class="make-word-one make-word-two-color">
+                护肤专区
+              </div>
+              <div class="make-word-two">
+                婴儿般的肌肤
+              </div>
+            </div>
+            <div class="make-img">
+              <img src="@/assets/images/skin.png">
+            </div>
+          </div>
+          <div class="makeup-right-item color-four">
+            <div class="make-word">
+              <div class="make-word-one make-word-three-color">
+                彩妆专区
+              </div>
+              <div class="make-word-two">
+                让自己一直美下去
+              </div>
+            </div>
+            <div class="make-img">
+              <img src="@/assets/images/cosmetics.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 美妆达人end -->
+      <!-- 热卖品牌 -->
+      <div class="sellers">
+        <div class="sellers-header">
+          热卖品牌
+        </div>
+        <div class="sellers-content">
+          <div class="sellers-item">
+            <img src="@/assets/images/skii.png">
+          </div>
+          <div class="sellers-item">
+            <img src="@/assets/images/lancome.jpg">
+          </div>
+          <div class="sellers-item">
+            <img src="@/assets/images/jayjun.jpg">
+          </div>
+          <div class="sellers-item">
+            <img src="@/assets/images/esstee.jpg">
+          </div>
+          <div class="sellers-item">
+            <img src="@/assets/images/esstee.jpg">
+          </div>
+        </div>
+      </div>
+      <!-- 热卖品牌end -->
+      <!-- 服饰鞋包 -->
+      <div class="mother-care">
+        <div class="personal-care">
+          服饰鞋包
+        </div>
+        <div class="search-words">
+          <ul class="clearfix">
+            <li>热搜词：</li>
+            <li><a href="#">电动牙刷</a></li>
+            <li><a href="#">耳机</a></li>
+            <li><a href="#">钢笔</a></li>
+            <li><a href="#">手机</a></li>
+            <li><a href="#">吹风机</a></li>
+            <li><a href="#">剃须刀</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="Clothes">
+        <div class="Clothes-left">
+          <div class="Clothes-word">
+            潮流风向标
+          </div>
+          <div class="Clothes-word2">
+            极致潮流尽享时尚
+          </div>
+          <div class="Clothes-img">
+            <img src="@/assets/images/package.jpg">
+          </div>
+          <div class="Clothes-bottom">
+            <div class="Clothes-all">
+              <div class="Clothes-bottom-item mar-rm">
+                精品女装
+              </div>
+              <div class="Clothes-bottom-item">
+                精品女装
+              </div>
+            </div>
+            <div class="Clothes-all">
+              <div class="Clothes-bottom-item mar-rm">
+                精品女装
+              </div>
+              <div class="Clothes-bottom-item">
+                精品女装
+              </div>
+            </div>
+            <div class="Clothes-all">
+              <div class="Clothes-bottom-item mar-rm">
+                精品女装
+              </div>
+              <div class="Clothes-bottom-item">
+                精品女装
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="Clothes-right">
+          <div class="Clothes-right-item">
+            <div class="Clothes-right-word">
+              气质短裙
+            </div>
+            <div class="Clothes-right-word2">
+              夏日炎炎 秀出你的好身材
+            </div>
+            <div class="Clothes-right-img">
+              <img src="@/assets/images/short.jpg">
+            </div>
+          </div>
+          <div class="Clothes-right-item">
+            <div class="Clothes-right-word">
+              气质短裙
+            </div>
+            <div class="Clothes-right-word2">
+              夏日炎炎 秀出你的好身材
+            </div>
+            <div class="Clothes-right-img">
+              <img src="@/assets/images/short.jpg">
+            </div>
+          </div>
+          <div class="Clothes-right-item">
+            <div class="Clothes-commodity">
+              <img src="@/assets/images/peplo.jpg">
+            </div>
+            <div class="Clothes-commodity-word">
+              天梭魅时系列皮带石英女表
+            </div>
+            <div class="Clothes-commodity-word2">
+              ￥ ：1700.00
+            </div>
+          </div>
+          <div class="Clothes-right-item">
+            <div class="Clothes-right-word">
+              气质短裙
+            </div>
+            <div class="Clothes-right-word2">
+              夏日炎炎 秀出你的好身材
+            </div>
+            <div class="Clothes-right-img">
+              <img src="@/assets/images/short.jpg">
+            </div>
+          </div>
+          <div class="Clothes-right-item">
+            <div class="Clothes-right-word">
+              气质短裙
+            </div>
+            <div class="Clothes-right-word2">
+              夏日炎炎 秀出你的好身材
+            </div>
+            <div class="Clothes-right-img">
+              <img src="@/assets/images/short.jpg">
+            </div>
+          </div>
+          <div class="Clothes-right-item">
+            <div class="Clothes-commodity">
+              <img src="@/assets/images/peplo.jpg">
+            </div>
+            <div class="Clothes-commodity-word">
+              天梭魅时系列皮带石英女表
+            </div>
+            <div class="Clothes-commodity-word2">
+              ￥ ：1700.00
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 服饰鞋包end -->
+      <!-- 数码家电 -->
+      <!-- <div class="mother-care">
         <div class="personal-care">
           数码家电
         </div>
@@ -864,193 +1146,10 @@
             <li><a href="#">剃须刀</a></li>
           </ul>
         </div>
-      </div>
-      <div class="child-care">
-        <div class="child-care-left">
-          <div class="feeding">
-            <a href="#">
-              <img src="@/assets/images/feeding.png">
-            </a>
-            <a href="#" class="mar-lw">
-              <img src="@/assets/images/feeding.png">
-            </a>
-          </div>
-          <!-- <div class="squared"> -->
-          <div class="squared-child">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child2">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child3">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="child-care-right">
-          <div class="mother-commodity">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mother-commodity2">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> -->
       <!-- 数码家电 end-->
       <!-- 服装配饰 -->
-      <div class="mother-care">
+      <!-- <div class="mother-care">
         <div class="personal-care">
           服装配饰
         </div>
@@ -1065,193 +1164,10 @@
             <li><a href="#">剃须刀</a></li>
           </ul>
         </div>
-      </div>
-      <div class="child-care">
-        <div class="child-care-left">
-          <div class="feeding">
-            <a href="#">
-              <img src="@/assets/images/feeding.png">
-            </a>
-            <a href="#" class="mar-lw">
-              <img src="@/assets/images/feeding.png">
-            </a>
-          </div>
-          <!-- <div class="squared"> -->
-          <div class="squared-child">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child2">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child3">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="child-care-right">
-          <div class="mother-commodity">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mother-commodity2">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> -->
       <!-- 服装配饰 end-->
       <!-- 食品生鲜 -->
-      <div class="mother-care">
+      <!-- <div class="mother-care">
         <div class="personal-care">
           食品生鲜
         </div>
@@ -1266,193 +1182,10 @@
             <li><a href="#">剃须刀</a></li>
           </ul>
         </div>
-      </div>
-      <div class="child-care">
-        <div class="child-care-left">
-          <div class="feeding">
-            <a href="#">
-              <img src="@/assets/images/feeding.png">
-            </a>
-            <a href="#" class="mar-lw">
-              <img src="@/assets/images/feeding.png">
-            </a>
-          </div>
-          <!-- <div class="squared"> -->
-          <div class="squared-child">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child2">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child3">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="child-care-right">
-          <div class="mother-commodity">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mother-commodity2">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> -->
       <!-- 食品生鲜 end-->
       <!-- 汽车用品 -->
-      <div class="mother-care">
+      <!-- <div class="mother-care">
         <div class="personal-care">
           汽车用品
         </div>
@@ -1467,193 +1200,10 @@
             <li><a href="#">剃须刀</a></li>
           </ul>
         </div>
-      </div>
-      <div class="child-care">
-        <div class="child-care-left">
-          <div class="feeding">
-            <a href="#">
-              <img src="@/assets/images/feeding.png">
-            </a>
-            <a href="#" class="mar-lw">
-              <img src="@/assets/images/feeding.png">
-            </a>
-          </div>
-          <!-- <div class="squared"> -->
-          <div class="squared-child">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child2">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child3">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="child-care-right">
-          <div class="mother-commodity">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mother-commodity2">
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item">
-              <a href="#">
-                <img src="@/assets/images/cup.png">
-              </a>
-              <div class="commodity-introduce">
-                a2 白金婴儿配方奶粉一段 白金配方，营养保证
-              </div>
-              <div class="price-cart mar-tn">
-                <div>￥288</div>
-                <div class="mar-rw pointer">
-                  <img src="@/assets/images/cart.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> -->
       <!-- 汽车用品 end-->
       <!-- 特色推荐 -->
-      <div class="Featured">
+      <!-- <div class="Featured">
         <div class="Featured-left">
           <div class="Featured-left-item"></div>
         </div>
@@ -1663,36 +1213,7 @@
         <div class="Featured-right">
           <div class="Featured-right-item"></div>
         </div>
-      </div>
-      <div class="pick-week">
-        <div class="pick-week-item">
-          <div class="single-product-header pat-lm">
-            <span class="mar-lw">品牌特卖</span>
-            <span class="pick-sale">品牌限时特卖</span>
-          </div>
-          <div class="single-product-img">
-            <img src="@/assets/images/shoes.png">
-          </div>
-        </div>
-        <div class="pick-week-item">
-          <div class="single-product-header pat-lm">
-            <span class="mar-lw">企业采购</span>
-            <span class="pick-sale">超低价抢购中</span>
-          </div>
-          <div class="single-product-img">
-            <img src="@/assets/images/shoes.png">
-          </div>
-        </div>
-        <div class="pick-week-item">
-          <div class="single-product-header pat-lm">
-            <span class="mar-lw">汽车用品</span>
-            <span class="pick-sale">爆款直降天天低价</span>
-          </div>
-          <div class="single-product-img">
-            <img src="@/assets/images/shoes.png">
-          </div>
-        </div>
-      </div>
+      </div> -->
       <!-- 特色推荐 end-->
       <!-- 已经到底啦 -->
       <div class="Featured2">
@@ -1772,7 +1293,10 @@ export default {
       isShopping: false, //购物车提示
       isSideCart: false, //右侧购物车
       btnFlag: false, //返回顶部
+      isShapp: false,
+      isCart: true,
       mother: '国际大牌母婴用品',
+      isFloor: global.floor,
       isApplication: false,
       isApplication2: false,
       isApplication3: false,
@@ -1905,6 +1429,15 @@ export default {
         that.btnFlag = false
       }
     },
+    //加入购物车
+    shappingEnter() {
+      this.isShapp = true;
+      this.isCart = false;
+    },
+    shappingLeave() {
+      this.isShapp = false;
+      this.isCart = true;
+    },
     //商品展示详情
     maskEnter() {
       document.querySelector('.commodityInfos').style.bottom = 0 + 'px';
@@ -1974,6 +1507,9 @@ export default {
     SideCart() {
       this.isSideCart = !this.isSideCart;
     },
+    // tyu() {
+    //   window.open('#/details', '_blank');
+    // }
   },
   destroyed () {
     window.removeEventListener('scroll', this.scrollToTop)

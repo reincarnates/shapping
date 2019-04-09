@@ -15,10 +15,10 @@
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev swiper-button-black" slot="button-prev" id="left">
-          <img src="@/assets/images/left.png">
+          <img src="@/assets/images/right.png">
         </div>
         <div class="swiper-button-next swiper-button-black" slot="button-next" id="left">
-          <img src="@/assets/images/right.png">
+          <img src="@/assets/images/left.png">
         </div>
         <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
       </swiper>

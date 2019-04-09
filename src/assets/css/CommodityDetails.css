@@ -1,0 +1,348 @@
+.wrap{
+    width: 100%;
+    height: 100%;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: relative;
+}
+.content-search {
+    width: 1202px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+.content-logo {
+    width: 205px;
+    height: 115px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.content-logo img{
+    /* width: 100%; */
+    height: 100%;
+}
+.content-input {
+    width: 653px;
+    height: 115px;
+    box-sizing: border-box;
+    padding-left: 138px;
+    padding-top: 25px;
+    display: flex;
+    /* align-items: center */
+    justify-content: center;
+    flex-direction: column;
+}
+.search-input {
+    width: 515px;
+    height: 42px;
+    border: 1px solid #ff3f40;
+    display: flex;
+    align-items: center;
+}
+.search-input input {
+    width: 454px;
+    height: 42px;
+    border: none;
+    outline: none;
+    background: none;
+    padding-left: 17px;
+}
+.search-input img {
+    padding-right: 21px;
+    cursor: pointer;
+}
+.smallNav {
+    width: 515px;
+    height: 33px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    box-sizing: border-box;
+    padding-left: 17px;
+}
+.smallNav ul {
+    width: 100%;
+    line-height: 36px;
+    list-style: none;
+}
+.smallNav ul li {
+    width: 81px;
+    float: left;
+}
+.ShoppingCart {
+    width: 125px;
+    height: 42px;
+    border: 1px solid #ff3f40;
+    margin-top: 32px;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.ShoppingCart img {
+    margin-left: 16px;
+}
+.ShoppingCart span {
+    margin-left: 18px;
+    color: #ff3f40;
+    font-size: 14px;
+}
+.ShoppingCart-position{
+    width: 350px;
+    line-height: 100px;
+    background-color: #ffffff;
+    z-index: 999;
+    position: absolute;
+    /* border: 1px solid #e8e8e8;
+    box-shadow: 0 0 5px rgba(0,0,0,.2); */
+    padding-left: 30px;
+    color: #9b9b9b;
+    right: 189px;
+    bottom: -60px;
+}
+.infoNumber {
+    width: 15px;
+    height: 15px;
+    background-color: #ff3f40;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+}
+.code {
+    width: 189px;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.smallNav ul li a:link {
+    color: #999999;
+}
+.smallNav ul li a:visited {
+    color: #999999;
+}
+.smallNav ul li a:hover {
+    color: #c5c5c5;
+}
+.smallNav ul li a:active {
+    color: #999999;
+}
+.classify{
+    width: 100%;
+    border-bottom: 3px solid #eb3f3f;
+    margin-top: 10px;
+}
+.categoriesWarp {
+    width: 1202px;
+    margin: 0 auto;
+    display: flex;
+}
+.all-categories {
+    width: 204px;
+    height: 42px;
+    background-color: #ff4040;
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aside {
+    width: 204px;
+    background-color: #ffffff;
+    border: 1px solid #e3e5e2;
+    box-shadow: 1px 0 0 #e3e5e2;
+    /* overflow: hidden; */
+    z-index: 999;
+    position: absolute;
+    left: 18.4%;
+}
+.aside ul {
+    width: 100%;
+    /* line-height: 30px; */
+    list-style: none;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+.aside ul li {
+    padding-left: 21px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+.aside ul li:hover {
+    background-color: #d8d8d8 !important;
+}
+.aside ul li a:link {
+    color: #626262;
+}
+.aside ul li a:visited {
+    color: #626262;
+}
+.aside ul li a:hover {
+    border-bottom: 1px solid #5f5f5f;
+}
+.aside ul li a:active {
+    color: #626262;
+}
+.list {
+    position: relative;
+}
+.list-select {
+    width: 1013px;
+    height: 601px;
+    background: #ffffff;
+    position: absolute;
+    right: 17.5%;
+    top: 0;
+    z-index: 10;
+    display: flex;
+}
+.list-select-left {
+    width: 805px;
+    height: 600px;
+    padding-top: 42px;
+    padding-left: 9px;
+    box-sizing: border-box;
+}
+.list-header {
+    width: 100%;
+    line-height: 24px;
+    font-size: 14px;
+    color: #ffffff;
+}
+.list-header span {
+    background: #363636;
+    margin-left: 10px;
+    padding: 7px 13px 6px 9px;
+}
+.list-header span:first-child {
+    margin-left: 0;
+}
+.lists {
+    width: 100%;
+    margin-top: 18px;
+    white-space: nowrap;
+}
+.lists span:first-child {
+    color: #1d1d1d;
+    font-size: 14px;
+    font-weight: bold;
+    border-left: none;
+    padding: 0;
+}
+.lists span {
+    color: #666666;
+    font-size: 12px;
+    border-left: 1px solid #dfdfdf;
+    padding: 3px 10px 2px 9px;
+}
+.list-select-right {
+    width: 193px;
+    height: 600px;
+    background: #ff3f40;
+}
+.smallMenu{
+    width: 1202px;
+    height: 33px;
+    margin: 0 auto;
+    border-top: 2px solid #f4f4f4;
+    line-height: 33px;
+    color: #666666;
+    letter-spacing: 7px;
+    font-size: 12px;
+}
+.dialog-commodity{
+    width: 1202px;
+    height: 530px;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+.commodity-planting{
+    width: 398px;
+    height: 530px;
+}
+.commodity-img{
+    width: 398px;
+    height: 398px;
+    border: 1px solid #d5d5d5;
+    position: relative;
+}
+.commodity-video{
+    width: 61px;
+    height: 22px;
+    border: 1px solid #ff4040;
+    border-radius: 11px;
+    background-color: #ff6e6e;
+    position: absolute;
+    bottom: 26px;
+    left: 26px;
+    display: flex;
+    justify-content: space-between;
+}
+.commodity-triangle{
+    width: 20px;
+    height: 20px;
+    background-color: #ffa1a1;
+    border-radius: 50%;
+}
+.triangle_border_right{
+    width:0;
+    height:0;
+    border-width:8px 0 8px 8px;
+    border-style:solid;
+    border-color:transparent transparent transparent transparent;/*透明 透明 透明 灰*/
+    position:relative;
+  }
+.triangle_border_right span{
+    display:block;
+    width:0;
+    height:0;
+    border-width:6px 0 6px 6px;
+    border-style:solid;
+    border-color:transparent transparent transparent #ffffff;/*透明 透明 透明 黄*/
+    position:absolute;
+    top: -4px;
+    left: 0;
+}
+.commodity-word{
+    font-size: 12px;
+    color: #ffffff;
+    line-height: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.commodity-info-planting{
+    width: 398px;
+    height: 96px;
+    border: 1px solid #1d1d1d;
+    margin-top: 17px;
+}
+.commodity-info-planting-word{
+    width: 100%;
+    line-height: 19px;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.commodity-info-planting-word span{
+    color: #ff6e6e;
+    margin-left: 16px;
+}
+.commodity-info-planting-word span img{
+    margin-right: 4px;
+}

@@ -4,21 +4,24 @@
       <swiper :options="swiperOption" ref="mySwiper" style="height:266px;">
         <!-- slides -->
         <swiper-slide>
-          <img src="@/assets/images/bannerimg.png">
+          <img src="@/assets/images/baby.jpg">
         </swiper-slide>
         <swiper-slide>
-          <img src="@/assets/images/bannerimg.png">
+          <img src="@/assets/images/Towel.jpg">
         </swiper-slide>
         <swiper-slide>
-          <img src="@/assets/images/bannerimg.png">
+          <img src="@/assets/images/baby.jpg">
+        </swiper-slide>
+        <swiper-slide>
+          <img src="@/assets/images/Towel.jpg">
         </swiper-slide>
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev swiper-button-black" slot="button-prev" id="left">
-          <img src="@/assets/images/left.png">
+          <img src="@/assets/images/right.png">
         </div>
         <div class="swiper-button-next swiper-button-black" slot="button-next" id="left">
-          <img src="@/assets/images/right.png">
+          <img src="@/assets/images/left.png">
         </div>
         <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
       </swiper>
