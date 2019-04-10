@@ -8,6 +8,9 @@ import headerTop from "./components/header/header"
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import 'swiper/dist/css/swiper.css'
+import service from './api/service';
+
+Vue.prototype.$service = service;
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 Vue.config.productionTip = false

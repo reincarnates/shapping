@@ -616,285 +616,63 @@
       </div>
       <!-- 单品热卖 end-->
       <!-- 母婴个护 -->
-      <div class="mother-care" v-if="isFloor == 1">
-        <div class="personal-care">
-          母婴个护
+      <div v-for="(item, index) in floorArrOne" :key="index">
+        <div class="mother-care">
+          <div class="personal-care">
+            {{item.title}}
+          </div>
+          <div class="search-words">
+            <ul class="clearfix">
+              <li>热搜词：</li>
+              <li v-for="(element, key) in item.word_key" :key="key">
+                <a :href='element.url'>
+                  {{element.name}}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="search-words">
-          <ul class="clearfix">
-            <li>热搜词：</li>
-            <li><a href="#">电动牙刷</a></li>
-            <li><a href="#">耳机</a></li>
-            <li><a href="#">钢笔</a></li>
-            <li><a href="#">手机</a></li>
-            <li><a href="#">吹风机</a></li>
-            <li><a href="#">剃须刀</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="child-care" v-if="isFloor == 1">
-        <div class="child-care-left">
-          <div class="feeding">
-            <a href="#">
-              <img src="@/assets/images/feeding.png">
-            </a>
-            <a href="#" class="mar-lw">
-              <img src="@/assets/images/feeding.png">
-            </a>
-          </div>
-          <!-- <div class="squared"> -->
-          <div class="squared-child">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child2">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <div class="squared-child3">
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-            <div class="squared-child-item">
-              <a href="#">
-                <img src="@/assets/images/squareditem.png">
-              </a>
-            </div>
-          </div>
-          <!-- </div> -->
-        </div>
-        <div class="child-care-right">
-          <div class="mother-commodity">
-            <div class="mother-commodity-item" @mousemove="maskEnter" @mouseout="maskLeave">
-              <div class="commodityImg">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
+        <div class="child-care">
+          <div class="child-care-left">
+            <div class="feeding">
+              <div class="feeding-banner" v-for="(each, suffix) in item.data_list.small_banner" :key="suffix">
+                <a :href="each.url">
+                  <img :src="each.image_url">
                 </a>
               </div>
-              <div class="commodity-info commodityInfos">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="mother-commodity-item" @mousemove="maskEnter2" @mouseout="maskLeave2">
-              <div class="commodityImg2">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
+            <!-- <div class="squared"> -->
+            <div class="squared-child">
+              <div class="squared-child-item" v-for="(itemsList, subscripts) in item.data_list.brand_list" :key="subscripts">
+                <a :href="itemsList.url">
+                  <img :src="itemsList.img_url">
                 </a>
-              </div>
-              <div class="commodity-info commodityInfos2">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item" @mousemove="maskEnter3" @mouseout="maskLeave3">
-              <div class="commodityImg3">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-              </div>
-              <div class="commodity-info commodityInfos3">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item" @mousemove="maskEnter4" @mouseout="maskLeave4">
-              <div class="commodityImg4">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-              </div>
-              <div class="commodity-info commodityInfos4">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div class="mother-commodity2">
-            <div class="mother-commodity-item" @mousemove="maskEnter5" @mouseout="maskLeave5">
-              <div class="commodityImg5">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-              </div>
-              <div class="commodity-info commodityInfos5">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
+          <div class="child-care-right">
+            <div class="mother-commodity">
+              <div class="mother-commodity-item" v-for="(ItemName, indexes) in item.data_list.product_list" :key="indexes" @mousemove="maskEnter(indexes)" @mouseout="maskLeave(indexes)">
+                <div class="commodityImg">
+                  <a>
+                    <img src="@/assets/images/cup.png">
+                  </a>
                 </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
+                <div class="commodity-info commodityInfos" :class="{itemHover:isItemHover==indexes}">
+                  <div class="commodity-introduce">
+                    {{ItemName.product_name}}
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item" @mousemove="maskEnter6" @mouseout="maskLeave6">
-              <div class="commodityImg6">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-              </div>
-              <div class="commodity-info commodityInfos6">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
+                  <div style="line-height: 25px;">
+                    <span class="price">市场价:￥{{ItemName.market_price}}</span>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item" @mousemove="maskEnter7" @mouseout="maskLeave7">
-              <div class="commodityImg7">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-              </div>
-              <div class="commodity-info commodityInfos7">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mother-commodity-item" @mousemove="maskEnter8" @mouseout="maskLeave8">
-              <div class="commodityImg8">
-                <a href="#">
-                  <img src="@/assets/images/cup.png">
-                </a>
-              </div>
-              <div class="commodity-info commodityInfos8">
-                <div class="commodity-introduce">
-                  a2 白金婴儿配方奶粉一段 白金配方，营养保证
-                </div>
-                <div style="line-height: 25px;">
-                  <span class="price">市场价:￥97.00</span>
-                </div>
-                <div class="price-cart">
-                  <div class="price-cart2">￥288</div>
-                  <div class="pointer shapp" @mousemove="shappingEnter" @mouseout="shappingLeave">
-                    <img src="@/assets/images/cart.png" v-if="isCart" class="isCart">
-                    <div v-if="isShapp" @mousemove="shappingEnter" @mouseout="shappingLeave" class="showCart">
-                      <img src="@/assets/images/cart.png" class="mar-rn">
-                      立即购买
+                  <div class="price-cart">
+                    <div class="price-cart2">￥{{ItemName.price}}</div>
+                    <div class="pointer shapp" @mousemove="shappingEnter(indexes)" @mouseout="shappingLeave(indexes)">
+                      <img src="@/assets/images/cart.png" v-if="isCart==indexes?false:true" class="isCart">
+                      <div v-if="isShapp==indexes" @mousemove="shappingEnter(indexes)" @mouseout="shappingLeave" class="showCart">
+                        <img src="@/assets/images/cart.png" class="mar-rn">
+                        立即购买
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -982,25 +760,15 @@
       </div>
       <!-- 美妆达人end -->
       <!-- 热卖品牌 -->
-      <div class="sellers">
+      <div class="sellers" v-for="(item, index) in floorArrThree" :key="'info2-'+index">
         <div class="sellers-header">
-          热卖品牌
+          {{item.title}}
         </div>
         <div class="sellers-content">
-          <div class="sellers-item">
-            <img src="@/assets/images/skii.png">
-          </div>
-          <div class="sellers-item">
-            <img src="@/assets/images/lancome.jpg">
-          </div>
-          <div class="sellers-item">
-            <img src="@/assets/images/jayjun.jpg">
-          </div>
-          <div class="sellers-item">
-            <img src="@/assets/images/esstee.jpg">
-          </div>
-          <div class="sellers-item">
-            <img src="@/assets/images/esstee.jpg">
+          <div class="sellers-item" v-for="(element, key) in item.data_list.banner_list" :key="key">
+            <a :href="element.url">
+              <img :src="element.img_url">
+            </a>
           </div>
         </div>
       </div>
@@ -1250,6 +1018,7 @@ import ScreenSotation from "./ScreenSotation.vue";
 import brandPlanting from "./brandPlanting.vue";
 import footerView from "../../components/footer/footer.vue";
 import global from "../../assets/js/config.js";
+var serivce,self;
 export default {
   components: {
     WheelPlanting,
@@ -1293,118 +1062,143 @@ export default {
       isShopping: false, //购物车提示
       isSideCart: false, //右侧购物车
       btnFlag: false, //返回顶部
-      isShapp: false,
-      isCart: true,
+      isShapp: null,
+      isCart: null,
       mother: '国际大牌母婴用品',
+      isItemHover: null,
       isFloor: global.floor,
       isApplication: false,
       isApplication2: false,
       isApplication3: false,
       isApplication4: false,
       isApplication5: false,
-      mask: false,
-      mask2: false,
-      mask3: false,
-      mask4: false,
-      mask5: false,
-      mask6: false,
-      mask7: false,
-      mask8: false,
+      //楼层数组
+      floorArrOne: [],
+      floorArrTwo: [],
+      floorArrThree: [],
     };
   },
   created() {},
   mounted() {
-    var heightCss = window.getComputedStyle(this.$refs.aside).height;
-    var heightCss2 = window.getComputedStyle(this.$refs.aside1).height;
+    serivce = this.$service;
+    self = this;
+    var heightCss = window.getComputedStyle(self.$refs.aside).height;
+    var heightCss2 = window.getComputedStyle(self.$refs.aside1).height;
     if (heightCss > heightCss2) {
-      this.$refs.aside1.style.overflow = "hidden";
+      self.$refs.aside1.style.overflow = "hidden";
     } else {
-      this.isOpen = false;
+      self.isOpen = false;
     };
     if(global.Bg == 1) {
-      this.isAside = 1;
+      self.isAside = 1;
     }else if(global.Bg == 2) {
-      this.isAside = 2
+      self.isAside = 2
     }else if(global.Bg == 3) {
-      this.isAside = 3
+      self.isAside = 3
     };
-    window.addEventListener('scroll', this.scrollToTop)
+    window.addEventListener('scroll', self.scrollToTop);
+    //请求楼层信息
+    serivce.get('http://www.helibuy.cn/mall/index.php', { app: 'index', a: 'test' }, function(res) {
+      if(res.code) {
+        var myData = res.data;
+        myData.forEach(item => {
+          if(item.type == 1) {
+            self.floorArrOne.push(item);
+          }else if(item.type == 2) {
+            self.floorArrTwo.push(item);
+          }else if(item.type == 3) {
+            self.floorArrThree.push(item);
+          };
+        });
+        console.log(self.floorArrThree);
+      }else {
+        alert(res.msg);
+      }
+    });
+    //请求分类
+    serivce.get('http://www.helibuy.cn/mall_api/index.php?app=web_index&a=index', { method: 'home.categoryNav' }, function(res) {
+      if(res.code) {
+        console.log(res.data);
+      }else{
+        alert(res.msg);
+      }
+    });
   },
   methods: {
     //关闭广告
     advertClose() {
-      this.close = false;
+      self.close = false;
     },
     //侧导航鼠标移入
     mouseEnter() {
-      // this.itemHoverIndex = index;
-      this.listShow = true;
+      // self.itemHoverIndex = index;
+      self.listShow = true;
     },
     //侧导航鼠标移除
     mouseLeave() {
-      // this.itemHoverIndex = null;
-      this.listShow = false;
+      // self.itemHoverIndex = null;
+      self.listShow = false;
     },
     openAside() {
-      this.brandFold = !this.brandFold;
-      var heightCss = window.getComputedStyle(this.$refs.aside).height;
-      if (!this.brandFold) {
-        this.$refs.aside1.style.height = heightCss;
-        this.isOpen = false;
-        this.$refs.allCategories.style.background = 'white'
+      self.brandFold = !self.brandFold;
+      var heightCss = window.getComputedStyle(self.$refs.aside).height;
+      if (!self.brandFold) {
+        self.$refs.aside1.style.height = heightCss;
+        self.isOpen = false;
+        self.$refs.allCategories.style.background = 'white'
       } else {
-        this.$refs.aside1.style.height = 480 + "px";
+        self.$refs.aside1.style.height = 480 + "px";
       }
     },
     //切换轮播图
     operationWheel() {
-      this.isRotation = !this.isRotation;
-      this.isAside = !this.isAside;
+      self.isRotation = !self.isRotation;
+      self.isAside = !self.isAside;
     },
     //搜索框的placeholder
     motherFocus() {
-      this.mother = '';
+      self.mother = '';
     },
     motherBlur() {
-      this.mother = '国际大牌母婴用品';
+      self.mother = '国际大牌母婴用品';
     },
     //购物车提示
     shoppingMove() {
-      this.isShopping = true;
+      self.isShopping = true;
     },
     shoppingOut() {
-      this.isShopping = false;
+      self.isShopping = false;
     },
     //侧边栏
     application() {
-      this.isApplication = true;
+      self.isApplication = true;
     },
     applicationOut() {
-      this.isApplication = false;
+      self.isApplication = false;
     },
     application2() {
-      this.isApplication2 = true;
+      self.isApplication2 = true;
     },
     applicationOut2() {
-      this.isApplication2 = false;
+      self.isApplication2 = false;
     },
     application3() {
-      this.isApplication3 = true;
+      self.isApplication3 = true;
     },
     applicationOut3() {
-      this.isApplication3 = false;
+      self.isApplication3 = false;
     },
     application4() {
-      this.isApplication4 = true;
+      self.isApplication4 = true;
     },
     applicationOut4() {
-      this.isApplication4 = false;
+      self.isApplication4 = false;
     },
     application5() {
-      this.isApplication5 = true;
+      self.isApplication5 = true;
     },
     applicationOut5() {
-      this.isApplication5 = false;
+      self.isApplication5 = false;
     },
     //返回顶部
     // 点击图片回到顶部方法，加计时器是为了过渡顺滑
@@ -1430,89 +1224,33 @@ export default {
       }
     },
     //加入购物车
-    shappingEnter() {
-      this.isShapp = true;
-      this.isCart = false;
+    shappingEnter(index) {
+      self.isShapp = index;
+      self.isCart = index;
     },
     shappingLeave() {
-      this.isShapp = false;
-      this.isCart = true;
+      self.isShapp = null;
+      self.isCart = null;
     },
     //商品展示详情
-    maskEnter() {
-      document.querySelector('.commodityInfos').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg').style.opacity = 0.7;
+    maskEnter(index) {
+      // document.querySelector('.commodityInfos').style.bottom = 0 + 'px';
+      // document.querySelector('.commodityImg').style.opacity = 0.7;
+      self.isItemHover = index;
     },
     maskLeave() {
-      document.querySelector('.commodityInfos').style.bottom = -39 + 'px'
-      document.querySelector('.commodityImg').style.opacity = 1;
-    },
-    maskEnter2() {
-      document.querySelector('.commodityInfos2').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg2').style.opacity = 0.7;
-    },
-    maskLeave2() {
-      document.querySelector('.commodityInfos2').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg2').style.opacity = 1;
-    },
-    maskEnter3() {
-      document.querySelector('.commodityInfos3').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg3').style.opacity = 0.7;
-    },
-    maskLeave3() {
-      document.querySelector('.commodityInfos3').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg3').style.opacity = 1;
-    },
-    maskEnter4() {
-      document.querySelector('.commodityInfos4').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg4').style.opacity = 0.7;
-    },
-    maskLeave4() {
-      document.querySelector('.commodityInfos4').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg4').style.opacity = 1;
-    },
-    maskEnter5() {
-      document.querySelector('.commodityInfos5').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg5').style.opacity = 0.7;
-    },
-    maskLeave5() {
-      document.querySelector('.commodityInfos5').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg5').style.opacity = 1;
-    },
-    maskEnter6() {
-      document.querySelector('.commodityInfos6').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg6').style.opacity = 0.7;
-    },
-    maskLeave6() {
-      document.querySelector('.commodityInfos6').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg6').style.opacity = 1;
-    },
-    maskEnter7() {
-      document.querySelector('.commodityInfos7').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg7').style.opacity = 0.7;
-    },
-    maskLeave7() {
-      document.querySelector('.commodityInfos7').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg7').style.opacity = 1;
-    },
-    maskEnter8() {
-      document.querySelector('.commodityInfos8').style.bottom = 0 + 'px';
-      document.querySelector('.commodityImg8').style.opacity = 0.7;
-    },
-    maskLeave8() {
-      document.querySelector('.commodityInfos8').style.bottom = -39 + 'px';
-      document.querySelector('.commodityImg8').style.opacity = 1;
+      self.isItemHover = null;
     },
     //右边购物车
     SideCart() {
-      this.isSideCart = !this.isSideCart;
+      self.isSideCart = !self.isSideCart;
     },
     // tyu() {
     //   window.open('#/details', '_blank');
     // }
   },
   destroyed () {
-    window.removeEventListener('scroll', this.scrollToTop)
+    window.removeEventListener('scroll', self.scrollToTop)
   }
 };
 </script>

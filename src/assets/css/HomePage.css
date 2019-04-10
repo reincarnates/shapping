@@ -993,8 +993,16 @@
     width: 100%;
     display: flex
   }
-  .feeding img{
+  .feeding-banner{
     width: 170px;
+    height: 180px;
+    margin-right: 15px;
+  }
+  .feeding-banner:last-child{
+    margin-right: 0;
+  }
+  .feeding img{
+    width: 100%;
     height: 180px;
     display: block;
   }
@@ -1003,37 +1011,26 @@
   }
   .squared-child{
     width: 354px;
-    height: 79px;
+    height: 235px;
     border: 1px solid #eeeeee;
     margin-top: 23px;
     display: flex;
+    flex-wrap: wrap;
   }
   .squared-child-item{
-    width: 118px;
+    width: 33.3%;
     height: 79px;
     border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
   }
-  .squared-child-item:last-child{
+  /* .squared-child-item:last-child{
     border: none; 
+  } */
+  .squared-child-item:nth-child(3n){
+    border-right: none;
   }
   .squared-child-item img:hover{
     opacity: 0.7;
-  }
-  .squared-child2{
-    width: 354px;
-    height: 79px;
-    border-bottom: 1px solid #eeeeee;
-    border-left: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
-    display: flex;
-  }
-  .squared-child3{
-    width: 354px;
-    height: 79px;
-    border-bottom: 1px solid #eeeeee;
-    border-left: 1px solid #eeeeee;
-    border-right: 1px solid #eeeeee;
-    display: flex;
   }
   .child-care-right{
     width: 787px;
@@ -1046,6 +1043,7 @@
     height: 241px;
     border-bottom: 1px solid #efefef;
     display: flex;
+    flex-wrap: wrap;
   }
   .mother-commodity2{
     width: 100%;
@@ -1089,6 +1087,7 @@
     color: #333333;
   }
   .commodity-info{
+    width: 180px;
     position: absolute;
     bottom: -39px;
     transition: all 0.3s ease;
@@ -1098,7 +1097,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-right: 3px;
+    margin-right: 10px;
   }
   .isCart{
     position: absolute;
@@ -1119,6 +1118,7 @@
     justify-content: center;
   }
   .price-cart{
+    width: 100%;
     line-height: 39px;
     box-sizing: border-box;
     color: #f20b0b;
@@ -1505,4 +1505,8 @@
     color: #e31436;
     font-size: 24px;
     text-align: center;
+  }
+  .itemHover{
+    bottom: 0;
+    opacity: 0.7;
   }
