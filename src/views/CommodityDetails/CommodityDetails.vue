@@ -422,8 +422,168 @@
               自营
             </div>
           </div>
+          <div class="Welcome">
+            <div class="Welcome-word">
+              迪奥（Dior）美妆专区欢迎您
+            </div>
+            <div class="enterstep pointer">
+              进入店铺
+            </div>
+          </div>
+          <div class="Otherwise">
+            看了本商品的用户最终购买了
+          </div>
+          <div class="numbered-list" v-for="item in 3" :key="item">
+            <img src="@/assets/images/Lipstick.jpg" class="mar-tm">
+            <div class="numbered-list-describe">
+              迪奥 (DIOR) 烈焰兰金唇膏999 333
+            </div>
+            <div class="numbered-list-price">
+              ￥499.0
+            </div>
+            <div class="recommended-item-button pointer">查看详情</div>
+          </div>
         </div>
-        <div class="Introduction-right"></div>
+        <div class="Introduction-right">
+          <div class="acf-tab">
+            <div class="tab-bar">
+              <a href="javascript:;"
+                @click="tab(index)"
+                v-for="(item,index) in items" :key="index"
+                :class="{tabActive : index===curId}"
+                v-html="item.item"></a>
+            </div>
+            <div class="tab-con" v-show="curId===0">
+              <div class="tab-con-head">
+                <div class="specifications">
+                  规格参数
+                </div>
+                <div class="big-introduction">
+                  <div class="introduction-two" v-for="(item,index) in 6" :key="index">
+                    品牌：迪奥
+                  </div>
+                </div>
+              </div>
+              <div class="tab-con-img">
+                <img src="@/assets/images/Goods-one.jpg" class="mar-tm">
+                <img src="@/assets/images/Goods-two.jpg">
+                <img src="@/assets/images/Goods-three.jpg">
+                <div class="Characters"></div>
+              </div>
+              <div class="tab-table">
+                <div class="tab-table-head">主体</div>
+                <div class="tab-table-item" v-for="(item,index) in products" :key="index">
+                  <div class="tab-table-item-left">
+                    {{item.title}}
+                  </div>
+                  <div class="tab-table-item-right">
+                    {{item.content}}
+                  </div>
+                </div>
+                <div class="Packing-list">
+                  包装清单
+                </div>
+                <div class="Packing-number">
+                  迪奥DIOR魅惑润唇蜜SPF10 × 1
+                </div>
+              </div>
+              <div class="paragraph">
+                <div v-for="(item,index) in information" :key="index">
+                  <div class="paragraph-title">
+                    {{item.title}}
+                  </div>
+                  <div class="mar-tm">
+                    <p class="paragraph-content">
+                      {{item.content}}
+                    </p>
+                    <p class="paragraph-content">
+                      {{item.info}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="highest">
+                <div class="highest-left">
+                  <div class="rate_n">
+                    <div class="rate_word">好评率</div>
+                    <div class="Percentage">
+                      99<span>%</span>
+                    </div>
+                    <div class="rate_word_bottom">
+                      共21万人评论
+                    </div>
+                  </div>
+                  <div class="everyone-feels">
+                    <div class="triangle_border_right">
+                      <span></span>
+                    </div>
+                    大<br/>家<br/>觉<br/>得
+                  </div>
+                </div>
+                <div class="highest-right">
+                  <div class="highest-right-item pointer" v-for="(item,index) in 9" :key="index">
+                    颜色漂亮(23)
+                  </div>
+                </div>
+              </div>
+              <div class="Category">
+                <div class="Category-head">
+                  <div class="tab-bar2">
+                    <a href="javascript:;"
+                      @click="Category(index)"
+                      v-for="(item,index) in categoryItem" :key="index"
+                      :class="{categoryActive : index===curId2}">
+                        <form>
+                          <label class="checkRadio">
+                            <input name="Fruit" type="radio" value="" :checked="index === curId2" class="mar-rn"/>
+                            {{item.item}}
+                          </label> 
+                        </form>
+                      </a>
+                  </div>
+                  <div class="current">
+                    <form>
+                      <label>
+                        <input name="Fruit" type="checkbox" value=""/>
+                        只看当前评价
+                      </label> 
+                    </form>
+                  </div>
+                </div>
+                <div v-show="curId2===0">
+                  <div class="Category-content" v-for="i in 2" :key="i">
+                    <div class="mastheader">
+                      <div class="redheads"></div>
+                      <div class="mastheader-word">
+                        {{'哈哈哈哈哈' | newWord}}
+                      </div>
+                    </div>
+                    <div class="page-content">
+                      <div class="page-content-head">
+                        评分：
+                      </div>
+                      <div class="page-content-test">
+                        内容：&nbsp;&nbsp;&nbsp;本来想买本来想买本来想买本来想买本来想买本来想买本来想买本来想买本来想买
+                      </div>
+                      <div class="page-content-img">
+                        <span>
+                          晒单：
+                        </span>
+                        <div class="contentImg">
+                          <div class="contentImg-item" v-for="i in 10" :key="i"></div>
+                        </div>
+                      </div>
+                      <div class="modelTypes">
+                        <span>粉色001</span>
+                        <span>2017-11-29 21:12:13</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -442,11 +602,95 @@ export default {
       height: global.leftMenu.height,
       isactive: null,
       isNetContent: null,
-      amount: 1
+      amount: 1,
+      curId: 0,
+      curId2: 0,
+      items: [
+        {item: '商品介绍'},
+        {item: '评价<span style="color: #ff4040">21万+</span>'},
+        {item: '规格及包装'},
+        {item: '售后服务'},
+      ],
+      products: [
+        {
+          title: '保质期（年）',
+          content: '3年'
+        },
+        {
+          title: '产品产地',
+          content: '其他'
+        },
+        {
+          title: '净含量（ml/g）',
+          content: '3.5g'
+        },
+        {
+          title: '色号颜色',
+          content: '001'
+        },
+        {
+          title: '功效',
+          content: '丰唇/显色；修护/滋润/保湿；其他'
+        },
+        {
+          title: '妆效',
+          content: '润泽/镜面'
+        }
+      ],
+      information: [
+        {
+          title: '福利购承诺',
+          content: '福利购平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务，请您放心购买！',
+          info: '注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若没有及时更新，请大家谅解！'
+        },
+        {
+          title: '全国联保',
+          content: '福利购平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务，请您放心购买！',
+          info: '注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若没有及时更新，请大家谅解！'
+        },
+        {
+          title: '权力声明',
+          content: '福利购平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务，请您放心购买！',
+          info: '注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若没有及时更新，请大家谅解！'
+        },
+        {
+          title: '价格说明',
+          content: '福利购平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务，请您放心购买！',
+          info: '注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若没有及时更新，请大家谅解！'
+        },
+      ],
+      categoryItem: [
+        {
+          item: '全部(21万+)'
+        },
+        {
+          item: '晒单(1.2万+)'
+        },
+        {
+          item: '追评(700+)'
+        },
+        {
+          item: '好评(20万+)'
+        },
+        {
+          item: '中评(1500万+)'
+        },
+        {
+          item: '差评(1700+)'
+        },
+      ]
     };
   },
+  filters: {
+    newWord(val) {
+      var word = val;
+      word = "" + word;
+      var word1 = word.substring(0,1) + "***" + word.charAt(word.length-1);
+      return word1
+    }
+  },
   mounted() {
-
+    
   },
   methods: {
     //搜索框的placeholder
@@ -494,6 +738,13 @@ export default {
       if(this.amount > 1) {
         this.amount--;
       }
+    },
+    //tab切换
+    tab(index) {
+      this.curId = index;
+    },
+    Category(index) {
+      this.curId2 = index;
     }
   }
 };

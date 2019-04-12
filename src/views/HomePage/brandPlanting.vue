@@ -3,10 +3,12 @@
     <div @mouseenter="on_top_enter" @mouseleave="on_top_leave" style="width:1180px;height:266px;">
       <swiper :options="swiperOption" ref="mySwiper" style="height:266px;">
         <!-- slides -->
-        <swiper-slide>
-          <img src="@/assets/images/baby.jpg">
+        <swiper-slide v-for="(item, index) in p_brand.code_info" :key="index">
+          <a :href="item.pic_url">
+            <img :src="item.pic_img">
+          </a>
         </swiper-slide>
-        <swiper-slide>
+        <!-- <swiper-slide>
           <img src="@/assets/images/Towel.jpg">
         </swiper-slide>
         <swiper-slide>
@@ -14,7 +16,7 @@
         </swiper-slide>
         <swiper-slide>
           <img src="@/assets/images/Towel.jpg">
-        </swiper-slide>
+        </swiper-slide> -->
         <!-- Optional controls -->
         <div class="swiper-pagination" slot="pagination"></div>
         <div class="swiper-button-prev swiper-button-black" slot="button-prev" id="left">
@@ -37,6 +39,7 @@ export default {
     swiper,
     swiperSlide
   },
+  props: ["brand"],
   data() {
     return {
       swiperOption: {
@@ -78,8 +81,14 @@ export default {
           clickable: true
         }
       },
-      swiperSlides: [1, 2, 3, 4]
+      swiperSlides: [1, 2, 3, 4],
+      p_brand: []
     };
+  },
+  watch: {
+    brand(val, oldVal) {
+      this.p_brand = val;
+    }
   },
   methods: {
     //通过获得的swiper对象来暂停自动播放
@@ -130,8 +139,9 @@ li {
 a {
   color: #42b983;
 }
-.swiper-slide {
-  height: 200px;
+.swiper-slide img{
+  width: 100%;
+  height: 100%;
 }
 #left {
   width: 40px;
